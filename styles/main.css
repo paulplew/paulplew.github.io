@@ -1,89 +1,84 @@
-:root {
-	/* --foreground-color-1: #fe9f00; */
-	--foreground-color-1: #aaaaaa;
-	/* --foreground-color-2: #bd0700; */
-	--foreground-color-2: #0000FF;
-	--foreground-color-3: #ffe2e0;
-	--shadow-color: #100b10;
-	/* --background-color: #ff380c; */
-	--background-color: #000000;
+:root
+{
+    --foreground-color-1: hsl(0, 0%, 100%);
+    --foreground-color-2: hsl(3.9, 100%, 90%);
+    --shadow-color: hsl(240.3, 100%, 34.7%);
+    --background-color: #00f;
 }
 
+@font-face
+{
+    font-family: posterBodoni;
 
-@font-face {
-	font-family: posterBodoni;
-	src: url("Bodoni\ Poster.otf");
+    src: url('Bodoni\ Poster.otf');
 }
 
-
-body {
-	margin: 0px;
+body
+{
+    margin: 0;
 }
 
-.flex-center {
-	background-color: var(--background-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.logo-form
+{
+    fill: #fff;
 }
 
-.Aligner-item {
-	max-width: 50%;
+.logo-form:hover
+{
+    fill: var(--foreground-color-2);
 }
 
-.Aligner-item--left {
-	align-self: center;
+@media all and (max-width: 600px)
+{
+    .background
+    {
+        flex-direction: column-reverse;
+    }
 }
 
-.Aligner-item--right {
-	align-self: flex-end;
+.background
+{
+    display: flex;
+
+    width: 95vw;
+    height: 95vh;
+    margin: auto;
+    margin-top: 2.5vh;
+
+    background-color: var(--background-color);
+
+    justify-content: center;
 }
 
-/* Small screens */
-@media all and (max-width: 800px) {
-	.flex-center {
-		/* On small screens, we are no longer using row direction but column */
-		flex-direction: column;
-	}
+.image-left
+{
+    width: 300px;
+    height: auto;
+    margin: auto;
 }
 
-#logo-large {
-	margin: auto;
-	height: 300px;
-	width: 300px;
+.right-links
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
 }
 
+.right-link
+{
+    font-family: posterBodoni;
+    font-size: xxx-large;
 
-#navigation {}
+    padding-left: 0 5vw 0 5vw;
 
-#navigation div {}
+    text-align: right;
+    text-decoration: none;
 
-#navigation a {
-	font-size: 4em;
-	text-transform: uppercase;
-	font-family: posterBodoni;
-	text-decoration: none;
-	color: var(--foreground-color-1);
-	text-shadow: 7px 7px 0px var(--shadow-color);
+    color: var(--foreground-color-1);
 }
 
-#navigation a:hover {
-	color: var(--foreground-color-2);
-	text-shadow: none;
-}
-
-#shadow {
-	fill: var(--foreground-color-2);
-}
-
-#logo-large>#collision-box {
-	fill: transparent !important;
-}
-
-#collision-box:hover ~ #foreground {
-	fill: var(--foreground-color-2);
-}
-
-#logo-large:hover>#foreground {
-	fill: var(--foreground-color-2);
+.right-link:hover
+{
+    color: var(--foreground-color-2);
 }
