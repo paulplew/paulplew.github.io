@@ -15,7 +15,7 @@
 
 body {
   margin: 0;
-  background: var(--foreground-color-1);
+  background: var(--background-color);
 }
 
 .logo-form {
@@ -28,10 +28,9 @@ body {
 
 .background {
   display: flex;
-  width: 95vw;
-  height: 95vh;
-  margin: auto;
-  margin-top: 2.5vh;
+	margin: auto;
+	height: 95vh;
+	border: 2.5vh solid var(--foreground-color-1);
   background-color: var(--background-color);
 }
 
@@ -39,6 +38,7 @@ body {
   width: 300px;
   height: auto;
   margin: auto;
+	align-self: center;
 }
 
 .right-links {
@@ -76,7 +76,7 @@ a:hover {
 
 @media only screen and (max-width: 700px) {
   .background {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .right-link {
