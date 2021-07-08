@@ -1,84 +1,94 @@
-:root
-{
-    --foreground-color-1: hsl(0, 0%, 100%);
-    --foreground-color-2: hsl(3.9, 100%, 90%);
-    --shadow-color: hsl(240.3, 100%, 34.7%);
-    --background-color: #00f;
+:root {
+  --foreground-color-1: hsl(0, 0%, 100%);
+  /* --foreground-color-1: #f0f; */
+  --foreground-color-2: hsl(3.9, 100%, 90%);
+  --shadow-color: hsl(240.3, 100%, 34.7%);
+  --background-color: #00f;
+  /* --background-color: hsl(0, 0%, 0%); */
 }
 
-@font-face
-{
-    font-family: posterBodoni;
-
-    src: url('Bodoni\ Poster.otf');
+@font-face {
+  font-family: posterBodoni;
+  src: url('Bodoni\ Poster.otf');
 }
 
-body
-{
-    margin: 0;
+body {
+  margin: 0;
+  background: var(--foreground-color-1);
 }
 
-.logo-form
-{
-    fill: #fff;
+.logo-form {
+  fill: var(--foreground-color-1);
 }
 
-.logo-form:hover
-{
-    fill: var(--foreground-color-2);
+.logo-form:hover {
+  fill: var(--foreground-color-2);
 }
 
-@media all and (max-width: 600px)
-{
-    .background
-    {
-        flex-direction: column-reverse;
-    }
+@media only screen and (max-width: 700px) {
+  .background {
+    flex-direction: column-reverse;
+  }
 }
 
-.background
-{
-    display: flex;
-
-    width: 95vw;
-    height: 95vh;
-    margin: auto;
-    margin-top: 2.5vh;
-
-    background-color: var(--background-color);
-
-    justify-content: center;
+.background {
+  display: flex;
+  width: 95vw;
+  height: 95vh;
+  margin: auto;
+  margin-top: 2.5vh;
+  background-color: var(--background-color);
+  justify-content: center;
 }
 
-.image-left
-{
-    width: 300px;
-    height: auto;
-    margin: auto;
+.image-left {
+  width: 300px;
+  height: auto;
+  margin: auto;
 }
 
-.right-links
-{
-    display: flex;
-    flex-direction: column;
-
-    margin: auto;
+.right-links {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: auto;
+  padding-top: 2vh;
 }
 
-.right-link
-{
-    font-family: posterBodoni;
-    font-size: xxx-large;
-
-    padding-left: 0 5vw 0 5vw;
-
-    text-align: right;
-    text-decoration: none;
-
-    color: var(--foreground-color-1);
+.right-link {
+  animation: un-stretch .25s ease-out 0s;
+  text-align: right;
 }
 
-.right-link:hover
-{
-    color: var(--foreground-color-2);
+.right-link:hover {
+  animation: stretch .25s ease-in 0s;
+  animation-fill-mode: forwards;
+}
+
+a {
+  font-family: bodoni-urw, serif;
+  font-size: 60px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--foreground-color-1);
+}
+
+a:hover {
+  color: var(--foreground-color-2);
+}
+
+@keyframes stretch {
+  100% {
+    font-size: 65px;
+  }
+}
+
+@keyframes un-stretch {
+  0% {
+    font-size: 65px;
+  }
+
+  100% {
+    font-size: 60px;
+  }
 }
