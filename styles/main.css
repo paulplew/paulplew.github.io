@@ -4,6 +4,7 @@
   --foreground-color-2: hsl(3.9, 100%, 90%);
   --shadow-color: hsl(240.3, 100%, 34.7%);
   --background-color: #00f;
+	--dark-background-color: #00d;
   /* --background-color: hsl(0, 0%, 0%); */
 }
 
@@ -29,6 +30,16 @@ body {
   .background {
     flex-direction: column-reverse;
   }
+
+	.right-link {
+		flex: 0 !important;
+		padding-right: 0 !important;
+	text-align: left !important;
+	}
+
+	.right-links {
+		align-items: center;
+	}
 }
 
 .background {
@@ -49,19 +60,22 @@ body {
 
 .right-links {
   display: flex;
+	padding-top: 2vh;
+	padding-right: 2vw;
+
   flex-direction: column;
-  height: auto;
   margin: auto;
-  padding-top: 2vh;
+	flex: 1;
 }
 
 .right-link {
-  animation: un-stretch .25s ease-out 0s;
+  animation: un-stretch .05s ease-out 0s;
   text-align: right;
+	flex: 1;
 }
 
 .right-link:hover {
-  animation: stretch .25s ease-in 0s;
+  animation: stretch .15s ease-in 0s;
   animation-fill-mode: forwards;
 }
 
@@ -70,6 +84,7 @@ a {
   font-size: 60px;
   font-weight: 800;
   text-decoration: none;
+	white-space: nowrap;
   color: var(--foreground-color-1);
 }
 
@@ -79,13 +94,13 @@ a:hover {
 
 @keyframes stretch {
   100% {
-    font-size: 65px;
+    font-size: 63px;
   }
 }
 
 @keyframes un-stretch {
   0% {
-    font-size: 65px;
+    font-size: 63px;
   }
 
   100% {
