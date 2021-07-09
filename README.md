@@ -1,3 +1,4 @@
 # plew.dev
-Personal Website 
-A Work in Progress
+My personal website. 
+
+A work in progress
