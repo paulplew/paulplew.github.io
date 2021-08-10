@@ -7,11 +7,6 @@
   --background-color: hsl(183,100%,21%);
 }
 
-@font-face {
-  font-family: posterBodoni;
-  src: url('Bodoni\ Poster.otf');
-}
-
 html,
 body {
   width: 100%;
