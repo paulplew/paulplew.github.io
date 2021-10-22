@@ -16,9 +16,18 @@ body {
 }
 
 body {
+    font-feature-settings: "kern";
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -o-font-feature-settings: "kern";
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-weight: 400;
     font-family: 'Sora', serif;
-    font-size: 10px;
-    line-height: 15px;
+    font-size: 10pt;
+    line-height: 15pt;
     color: var(--foreground);
 }
 
@@ -71,7 +80,7 @@ h1 {
 }
 
 .selected {
-    animation: 1s ease-in-out1 forwards flexing;
+    animation: 1s ease-in-out 0s 1 forwards flexing;
 }
 
 @-webkit-keyframes flexing {
@@ -204,5 +213,5 @@ h1 {
     width: 100vw;
     position: absolute;
     overflow: hidden;
-    z-index: -3 !important;
+    z-index: -99 !important;
 }
