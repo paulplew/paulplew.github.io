@@ -1,11 +1,6 @@
 import navigation from "./navigation.js";
 
 (function($) {
-
-
-    $('#main').append(`
-      ${navigation()}
-    `);
-
+    $('#main').append(`${navigation()}`);
     $('.nav-home').addClass('selected');
 })($);
