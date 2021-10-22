@@ -71,53 +71,41 @@ h1 {
 }
 
 .selected {
-    animation: 7s ease-in-out 0.5s 1 forwards flexing;
+    animation: 1s ease-in-out1 forwards flexing;
 }
 
 @-webkit-keyframes flexing {
-    0% {
+    from {
         letter-spacing: inherit;
     }
-    10% {
-        letter-spacing: 2px;
-    }
-    100% {
+    to {
         letter-spacing: 2px;
     }
 }
 
 @-o-keyframes flexing {
-    0% {
+    from {
         letter-spacing: inherit;
     }
-    10% {
-        letter-spacing: 2px;
-    }
-    100% {
+    to {
         letter-spacing: 2px;
     }
 }
 
 @-moz-keyframes flexing {
-    0% {
+    from {
         letter-spacing: inherit;
     }
-    10% {
-        letter-spacing: 2px;
-    }
-    100% {
+    to {
         letter-spacing: 2px;
     }
 }
 
 @keyframes flexing {
-    0% {
+    from {
         letter-spacing: inherit;
     }
-    10% {
-        letter-spacing: 2px;
-    }
-    100% {
+    to {
         letter-spacing: 2px;
     }
 }
