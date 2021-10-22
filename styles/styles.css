@@ -71,7 +71,7 @@ h1 {
 }
 
 .selected {
-    animation: 7s ease-in-out 0.5s 1 alternate flexing;
+    animation: 7s ease-in-out 0.5s 1 forwards flexing;
 }
 
 @-webkit-keyframes flexing {
