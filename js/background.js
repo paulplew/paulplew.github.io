@@ -1,53 +1,56 @@
-const
-    circles = [],
-    colors = [
-        { r: 229, g: 46, b: 30 },
-        { r: 92, g: 121, b: 237 },
-        { r: 246, g: 188, b: 44 },
-    ];
+let circles = [];
+const colors = [
+  { r: 229, g: 46, b: 30 },
+  { r: 92, g: 121, b: 237 },
+  { r: 246, g: 188, b: 44 },
+];
 
 function setup() {
-    var clientHeight = document.getElementById('background').clientHeight;
-    var clientWidth = document.getElementById('background').clientWidth;
-    var cnv = createCanvas(clientWidth, clientHeight);
-    cnv.parent("background");
+  const clientHeight = document.getElementById('background').clientHeight;
+  const clientWidth = document.getElementById('background').clientWidth;
+  const cnv = createCanvas(clientWidth, clientHeight);
+  cnv.parent("background");
 
-    noStroke();
+  noStroke();
+  colorMode(RGB, 255, 255, 255, 1)
 }
 
 function draw() {
-    background(color(255, 255, 255));
-    if (frameCount % 60 === 0) {
-        circles.push(createCircle(random(colors)));
-    }
+  background(color(255, 255, 255));
+  if (frameCount % 60 === 0) {
+    circles.push(createCircle(random(colors)));
+  }
 
-    circles.forEach((c, index) => {
-        const opacity = map(c.opacity, 0, 1, 0, 255);
-        const x = map(c.x, -1, 1, 0, width);
-        const y = map(c.y, -1, 1, 0, height);
+  circles.forEach((c) => {
+    const x = map(c.x, -1, 1, 0, width);
+    const y = map(c.y, -1, 1, 0, height);
 
-        fill(c.color.r, c.color.g, c.color.b, opacity);
-        circle(x, y, c.radius);
-        updateCircle(c, index);
-    });
+    fill(c.color.r, c.color.g, c.color.b, c.opacity);
+    circle(x, y, c.radius);
+  });
 
-    circles.filter((c) => c.opacity <= 0);
+  circles = circles
+    .map((circle) => updateCircle(circle))
+    .filter((circle) => circle.opacity > 0);
 }
 
-const createCircle = (color) => {
-    const c = {
-        x: random(-1, 1),
-        y: random(-1, 1),
-        radius: 0,
-        speed: random(0.1, 0.5),
-        color: { r: color.r, g: color.g, b: color.b },
-        opacity: 1,
-    };
-
-    return c;
+function windowResized() {
+  const clientHeight = document.getElementById('background').clientHeight;
+  const clientWidth = document.getElementById('background').clientWidth;
+  resizeCanvas(clientWidth, windowHeight);
 }
 
-const updateCircle = (c, index) => {
-    c.radius += c.speed;
-    c.opacity -= 0.002;
-}
+const createCircle = (color) => ({
+  x: random(-1, 1),
+  y: random(-1, 1),
+  radius: 0,
+  speed: random(0.1, 0.5),
+  color: { r: color.r, g: color.g, b: color.b },
+  opacity: 1,
+});
+
+const updateCircle = (c) => ({
+  ...c,
+  radius: c.radius += c.speed,
+  opacity: c.opacity -= 0.002,
+});
