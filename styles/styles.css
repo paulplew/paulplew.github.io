@@ -5,7 +5,6 @@
     --primary-blue: #5c79ed;
     --primary-yellow: #f6BC2C;
 }
-
 html,
 body {
     width: 100%;
@@ -14,7 +13,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 body {
     font-feature-settings: "kern";
     -webkit-font-feature-settings: "kern";
@@ -30,19 +28,15 @@ body {
     line-height: 15pt;
     color: var(--foreground);
 }
-
 header {
     padding: 25px 25px 25px 25px;
 }
-
 a {
     text-decoration: none;
 }
-
 h1 {
     text-transform: uppercase;
 }
-
 .center {
     height: 100vh;
     width: 100vw;
@@ -50,39 +44,42 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-
 #nav {
     width: 66vw;
 }
-
 #nav ul {
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
 }
-
 #nav li {
     list-style-type: none;
     display: inline;
     padding: 0px;
     margin: 0px;
 }
-
 .nav-item {
     color: var(--foreground);
     height: max-content;
 }
-
 .heading-name {
     font-size: 2em;
     line-height: 2em;
 }
+@media screen and (max-width: 810px) {
+    #nav li {
+        display: block;
+        width: 100%;
+    }
 
+    #nav .nav-separator {
+      display: none;
+    }
+}
 .selected {
     animation: 1s ease-in-out 0s 1 forwards flexing;
 }
-
 @-webkit-keyframes flexing {
     from {
         letter-spacing: inherit;
@@ -91,7 +88,6 @@ h1 {
         letter-spacing: 2px;
     }
 }
-
 @-o-keyframes flexing {
     from {
         letter-spacing: inherit;
@@ -100,7 +96,6 @@ h1 {
         letter-spacing: 2px;
     }
 }
-
 @-moz-keyframes flexing {
     from {
         letter-spacing: inherit;
@@ -109,7 +104,6 @@ h1 {
         letter-spacing: 2px;
     }
 }
-
 @keyframes flexing {
     from {
         letter-spacing: inherit;
@@ -118,45 +112,37 @@ h1 {
         letter-spacing: 2px;
     }
 }
-
 .nav-home:hover * {
     color: var(--white-color);
     background: var(--foreground);
 }
-
 .nav-about.selected {
     color: var(--primary-yellow);
 }
-
 .nav-about:hover {
     color: var(--white-color);
     background: var(--primary-yellow);
 }
-
 .nav-computer-science.selected {
     color: var(--primary-red);
 }
-
 .nav-computer-science:hover {
     color: var(--white-color);
     background: var(--primary-red);
 }
-
 .nav-design.selected {
     color: var(--primary-blue);
 }
-
 .nav-design:hover {
     color: var(--white-color);
     background: var(--primary-blue);
 }
-
 .flex-center {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
-
 .content-left {
     display: inherit;
     align-items: inherit;
@@ -164,42 +150,49 @@ h1 {
     width: 50vh;
     grid-column: 1;
 }
-
 .content-right {
     width: 50vh;
     grid-column: 2;
 }
-
 .padding-all {
     padding: 25px 25px 25px 25px;
 }
-
 .margin-all {
     margin: 25px 25px 25px 25px;
 }
-
 .grid-3-col {
     display: grid;
     grid-template-columns: repeat(3, auto);
 }
-
 .right-span-3 {
     grid-column: 2/5;
 }
-
 .contact-link {
     color: var(--primary-yellow);
 }
-
 .contact-link:hover {
     color: var(--white-color);
     background: var(--primary-yellow);
 }
-
 #background {
     height: 100vh;
     width: 100vw;
     position: absolute;
     overflow: hidden;
     z-index: -99 !important;
+}
+.card {
+    height: 500px;
+    position: relative;
+    display: inline-block;
+}
+.card .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.card:hover .img-top {
+    display: inline;
 }
