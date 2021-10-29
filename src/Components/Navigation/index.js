@@ -27,8 +27,8 @@ const Navigation = ({ selected = "HOME" }) => {
             </div>
           </Link>
         </li>
-        <li className="nav-separator"> &#8212;&#8212; </li>
-        <li>
+        {/* <li className="nav-separator"> &#8212;&#8212; </li> */}
+        {/* <li>
           <Link to="/portfolio">
             <div className="nav-item-container portfolio">
               <span className={`nav-item portfolio ${selected === 'PORTFOLIO' ? 'selected' : ''}`}>
@@ -36,7 +36,7 @@ const Navigation = ({ selected = "HOME" }) => {
               </span>
             </div>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
