@@ -1,0 +1,17 @@
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* justify-content: center; */
+}
+.content {
+  width: 300px;
+  margin: auto;
+}
+.padding-all {
+  padding: 25px 25px 25px 25px;
+}
+.section-title {
+  font-size: 15px;
+  line-height: 19px;
+}

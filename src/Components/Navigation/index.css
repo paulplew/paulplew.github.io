@@ -1,0 +1,111 @@
+#nav ul {
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#nav li {
+    list-style-type: none;
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+}
+.nav-item {
+    color: var(--foreground);
+    height: max-content;
+}
+.heading-name {
+    font-size: 2em;
+    line-height: 2em;
+}
+.nav-item-container {
+    display: inline;
+}
+.selected {
+    animation: 1s ease-in-out 0s 1 forwards flexing;
+}
+@-webkit-keyframes flexing {
+    from {
+        letter-spacing: inherit;
+    }
+    to {
+        letter-spacing: 2px;
+    }
+}
+@-o-keyframes flexing {
+    from {
+        letter-spacing: inherit;
+    }
+    to {
+        letter-spacing: 2px;
+    }
+}
+@-moz-keyframes flexing {
+    from {
+        letter-spacing: inherit;
+    }
+    to {
+        letter-spacing: 2px;
+    }
+}
+@keyframes flexing {
+    from {
+        letter-spacing: inherit;
+    }
+    to {
+        letter-spacing: 2px;
+    }
+}
+.nav-item-container:hover.home * {
+    color: var(--white-color);
+    background-color: var(--foreground);
+    background: var(--foreground);
+}
+.nav-item-container:hover.home {
+  background-color: var(--foreground);
+}
+.nav-item-container:hover.home * {
+    background: var(--foreground);
+}
+.nav-about.selected {
+    color: var(--primary-yellow);
+}
+.nav-item-container:hover.about {
+    background-color: var(--primary-yellow);
+}
+.nav-item-container:hover .about {
+    color: var(--white-color);
+    background: var(--primary-yellow);
+}
+.nav-portfolio.selected {
+    color: var(--primary-red);
+}
+.nav-item-container:hover.portfolio {
+  background-color: var(--primary-red);
+}
+.nav-item-container:hover .portfolio {
+    color: var(--white-color);
+    background: var(--primary-red);
+}
+.nav-resume.selected {
+    color: var(--primary-blue);
+}
+.nav-item-container:hover.resume {
+  background-color: var(--primary-blue);
+}
+.nav-item-container:hover .resume {
+    color: var(--white-color);
+    background: var(--primary-blue);
+}
+@media screen and (max-width: 810px) {
+    .nav-item-container {
+        display: block;
+        border-bottom: dashed 1px;
+    }
+    #nav .nav-separator {
+        display: none;
+    }
+    #nav {
+        width: 75vw;
+    }
+}

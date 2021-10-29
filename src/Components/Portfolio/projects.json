@@ -1,0 +1,64 @@
+{
+  "computer": [{
+      "title": "Racket Tetris",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "Codebreaker",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "OOD Photo Editor",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "p5.js Mazes",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "p5.js Bubble Simulator",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "Kruskal's Algorithm Maze Generator",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "XKCD Passphrase Generator",
+      "image": "",
+      "description": ""
+    }
+  ],
+  "design": [{
+      "title": "Spotify Search by Feeling",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "Cloud Typographic Poster",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "John Muir, The Yosemite Table Book",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "Mahler Symphony No. 9 Poster",
+      "image": "",
+      "description": ""
+    },
+    {
+      "title": "Personal Lettermark Exploration",
+      "image": "",
+      "description": ""
+    }
+  ]
+}
