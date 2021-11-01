@@ -12,8 +12,8 @@ const About = () => {
       <div className='flex-center padding-all'>
         <div className='content-left'>
           <div className='bio-photo'>
-            <img src='/images/paul-plew-yellow.png' alt="Paul Plew's beautiful portrait" height='500px' />
-            <img src='/images/paul-plew.png' alt="Paul Plew's beautiful portrait" className='img-top' height='500px' />
+            <img src='/plew.dev/images/paul-plew-yellow.png' alt="Paul Plew's beautiful portrait" height='500px' />
+            <img src='/plew.dev/images/paul-plew.png' alt="Paul Plew's beautiful portrait" className='img-top' height='500px' />
           </div>
         </div>
         <div className='content-right'>

@@ -7,12 +7,12 @@ import Navigation from '../Navigation';
 
 const Home = () => {
   document.title = 'Paul Plew';
-  
+
   return (
     <>
       <Background />
       <div className="center">
-        <Navigation selected={pages.home}/>
+        <Navigation selected={pages.home} />
       </div>
     </>
   );

@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 
-const PortfolioItem = ({
-item = {
-  title: 'Project'
-  image: '/images/'
-}}) => {
+// const PortfolioItem = ({
+// item = {
+//   title: 'Project'
+//   image: '/images/'
+// }}) => {
 
-}
+// }
