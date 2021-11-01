@@ -4,16 +4,25 @@
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 700px) {
+  .flex-center {
+      flex-flow: column;
+  }
+  .content-left {
+      width: auto; 
+  }
+  .content-right {
+      width: auto;
+  }
+}
 .content-left {
     width: 50%;
-    min-width: 350px;
     display: inherit;
     align-items: inherit;
     justify-content: inherit;
 }
 .content-right {
     width: 50%;
-    min-width: 500px;
     display: inherit;
     align-items: inherit;
     justify-content: inherit;

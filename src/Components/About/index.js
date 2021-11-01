@@ -23,7 +23,7 @@ const About = () => {
               Paul Plew is currently a Computer Science and Interaction Design student at Northeastern University. Paul is
               passionate about Computer Science specifically relating to user interface design, and web design. Outside the
               realm of computer science he is
-              a classNameically trained pianist with numerous songs in his repertoire, and a designer with an eye for clean
+              a classically trained pianist with numerous songs in his repertoire, and a designer with an eye for clean
               lines. One day he aspires to take his passion for design and computer science and become a designer that knows
               no bounds.
             </p>
