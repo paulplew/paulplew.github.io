@@ -1,8 +1,14 @@
 const colors = [
-  { r: 0, g: 101, b: 107 },
-  { r: 86, g: 84, b: 71 },
-  { r: 226, g: 168, b: 41 },
-  { r: 212, g: 208, b: 177 },
+  "#e9f5db",
+  "#dcebca",
+  "#cfe1b9",
+  "#c2d5aa",
+  "#b5c99a",
+  "#a6b98b",
+  "#97a97c",
+  "#849669",
+  "#728359",
+  "#606f49",
 ];
 const startLines = 25;
 
@@ -10,8 +16,20 @@ let halfHeight, halfWidth;
 let lines = [];
 
 function setup() {
-  const createdCanvas = createCanvas(windowWidth, windowHeight);
-  createdCanvas.parent("background")
+  const theCanvas = document.getElementById("background");
+  const computedStyle = getComputedStyle(theCanvas);
+  const backgroundHeight = parseInt(computedStyle.height);
+  const backgroundWidth = parseInt(computedStyle.width);
+
+  const createdCanvas = createCanvas(
+    parseInt(backgroundWidth),
+    parseInt(backgroundHeight),
+    P2D,
+    theCanvas,
+  );
+
+  createdCanvas.style.borderRadius = "1rem";
+
   strokeWeight(1);
   // frameRate(25);
   for (let l = 0; l < startLines; l++) {
@@ -29,25 +47,32 @@ function initLine(origin, direction) {
     origin: origin.slice(),
     end: origin.slice(),
     direction: direction.slice(),
-    speed: random(2, 5),
+    speed: random(5, 9),
     growing: true,
     color: random(colors),
     alive: true,
-    nodeRadius: 0
+    nodeRadius: 0,
   };
   return line;
 }
 
 // On window resize, update the canvas size
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const computedStyle = getComputedStyle(
+    document.getElementById("background-container"),
+  );
+  const backgroundHeight = parseInt(computedStyle.height);
+  const backgroundWidth = parseInt(computedStyle.width);
+
+  resizeCanvas(backgroundHeight, backgroundWidth);
+
   halfHeight = height / 2;
   halfWidth = width / 2;
 }
 
 // Render loop that draws shapes with p5
 function draw() {
-  background(255);
+  background("#765f4b");
   lines.forEach((line, index) => updateLine(line, index));
 
   push();
@@ -56,24 +81,18 @@ function draw() {
   lines.forEach(({ origin, end, color, nodeRadius }) => {
     const [originX, originY] = origin;
     const [endX, endY] = end;
-    stroke(color.r, color.g, color.b);
+    stroke(color);
     line(
       originX * halfWidth,
       originY * halfHeight,
       endX * halfWidth,
-      endY * halfHeight
+      endY * halfHeight,
     );
     strokeWeight(nodeRadius);
-    stroke(color.r, color.g, color.b, 100);
-    fill(color.r, color.g, color.b);
-    circle(
-      originX * halfWidth,
-      originY * halfHeight,
-      nodeRadius);
-    circle(
-      endX * halfWidth,
-      endY * halfHeight,
-      nodeRadius);
+    stroke(color + "55");
+    fill(color);
+    circle(originX * halfWidth, originY * halfHeight, nodeRadius);
+    circle(endX * halfWidth, endY * halfHeight, nodeRadius);
     strokeWeight(1);
   });
   pop();
@@ -101,14 +120,12 @@ function updateLine(line, index) {
   line.end[1] = y1;
   line.origin[0] = x0;
   line.origin[1] = y0;
-  
+
   if (line.growing) {
-    line.nodeRadius += random(0, 0.03) * line.speed;
+    line.nodeRadius += 0.01 * line.speed;
   } else {
-    line.nodeRadius -= random(0, 0.03) * line.speed;
+    line.nodeRadius -= 0.01 * line.speed;
   }
-    
-  
 
   if (line.growing && (x1 < -1 || x1 > 1.0 || y1 < -1 || y1 > 1)) {
     line.growing = false;
